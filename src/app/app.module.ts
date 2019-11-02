@@ -8,6 +8,8 @@ import { ListClienteComponent } from './list-cliente/list-cliente.component';
 import { DetailsClienteComponent } from './details-cliente/details-cliente.component';
 import { SearchClienteComponent } from './search-cliente/search-cliente.component';
 import { DeleteClienteComponent } from './delete-cliente/delete-cliente.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { DeleteClienteComponent } from './delete-cliente/delete-cliente.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
