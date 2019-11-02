@@ -2,18 +2,12 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
-@Injectable({providedIn: 'root'})
-export class ServiceNameService {
-  constructor(private httpClient: HttpClient) { }
-  
-}
-
 @Injectable({
   providedIn: 'root'
 })
 export class ClienteService {
 
-  private baseURL = 'http://locaclhost:8080/api/clientes';
+  private baseURL = 'http://localhost:8080/api/clientes';
 
   constructor(private http: HttpClient) { }
 
