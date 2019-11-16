@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClienteService } from '../cliente.service';
 import { Cliente } from '../model/cliente';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-cliente',
@@ -12,7 +13,7 @@ export class ListClienteComponent implements OnInit {
   clientes: Cliente[];
   apellidos = '';
 
-  constructor(private clienteService: ClienteService) { }
+  constructor(private clienteService: ClienteService, private router: Router) { }
 
   ngOnInit() {
     this.loadData();
@@ -40,5 +41,9 @@ export class ListClienteComponent implements OnInit {
     else{
       this.loadData();
     }
+  }
+
+  updateCliente(cliente: Cliente){
+    this.router.navigate(['actualizar',cliente.id]);
   }
 }

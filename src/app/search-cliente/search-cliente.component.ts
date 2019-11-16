@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ClienteService } from '../cliente.service';
+import { Cliente } from '../model/cliente';
 
 @Component({
   selector: 'app-search-cliente',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchClienteComponent implements OnInit {
 
-  constructor() { }
+  id: number;
+  dni: string;
+  cliente: Cliente; 
+
+  constructor(private clienteService: ClienteService) { }
 
   ngOnInit() {
   }
 
+  searchClienteById(){
+    this.clienteService.getClienteById(this.id)
+    .subscribe(cliente=>this.cliente = cliente);
+  }
+  searchClienteByDni(){
+    this.clienteService.getClienteByDni(this.dni)
+    .subscribe(cliente=>this.cliente = cliente);
+  }
 }

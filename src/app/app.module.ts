@@ -10,6 +10,7 @@ import { SearchClienteComponent } from './search-cliente/search-cliente.componen
 import { DeleteClienteComponent } from './delete-cliente/delete-cliente.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { UpdateClienteComponent } from './update-cliente/update-cliente.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     ListClienteComponent,
     DetailsClienteComponent,
     SearchClienteComponent,
-    DeleteClienteComponent
+    DeleteClienteComponent,
+    UpdateClienteComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,36 @@
-<p>search-cliente works!</p>
+<br/>
+<h2>Buscar Clientes por Id</h2>
+<br/>
+<div>
+    <form (ngSubmit)="searchClienteById()">
+        <div class="form-group col-md-6">
+            <label for="id">Id: </label>
+            <input type="text" class="form-control" id="id" name="id" required [(ngModel)]="id" placeholder="Ingrese su Id">
+        </div>
+        <div class="btn-group">
+            <button type="submit" class="btn btn-success">Buscar</button>
+        </div>
+    </form>
+</div>
+<ul>
+    <li *ngIf="cliente">
+        <h4>{{cliente.id}}. {{cliente.nombre}} {{cliente.apellidos}} - {{cliente.email}}</h4>
+    </li>
+</ul>
+<br/>
+<div>
+    <form (ngSubmit)="searchClienteByDni()">
+        <div class="form-group col-md-6">
+            <label for="dni">DNI: </label>
+            <input type="text" class="form-control" id="dni" name="dni" required [(ngModel)]="dni" placeholder="Ingrese su DNI">
+        </div>
+        <div class="btn-group">
+            <button type="submit" class="btn btn-success">Buscar</button>
+        </div>
+    </form>
+</div>
+<ul>
+    <li *ngIf="cliente">
+        <h4>{{cliente.id}} - {{cliente.nombre}} - {{cliente.apellidos}} - {{cliente.email}}</h4>
+    </li>
+</ul>
